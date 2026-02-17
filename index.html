@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereal/Cybercore Shader</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="windows.css">
+    <link rel="stylesheet" href="layout.css">
+</head>
+
+<body>
+    <nav id="top-bar">
+        <div class="logo">MATEO_OS // V1.0</div>
+        <div class="nav-links">
+            <span class="nav-link" data-section="about">ABOUT</span>
+            <span class="nav-link" data-section="projects">PROJECTS</span>
+            <span class="nav-link" data-section="contact">CONTACT</span>
+        </div>
+        <div class="status-info">
+            <span>ONLINE</span>
+            <span>SECURE</span>
+            <span id="audio-toggle">[ AUDIO: OFF ]</span>
+            <span id="lang-toggle">[ EN ]</span>
+        </div>
+    </nav>
+    <audio id="bg-music" loop>
+        <source src="audio/gloxina.mp3" type="audio/mpeg">
+    </audio>
+    <div id="ui-layer"></div>
+    <canvas id="gl"></canvas>
+    <script src="script.js"></script>
+    <script src="windows.js"></script>
+    <script src="nav.js"></script>
+</body>
+
+</html>
