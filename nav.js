@@ -473,10 +473,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize System Windows
     setTimeout(() => {
-        const t = translations[currentLang];
-        createWindow('system_data', t.content.system_data.title, t.content.system_data.html, 50, 50, 250);
-        createWindow('terminal', t.content.terminal.title, t.content.terminal.html, 400, 150, 350);
-        createWindow('visualizers', t.content.visualizers.title, t.content.visualizers.html, 100, 400, 200);
+        // const t = translations[currentLang];
+        // createWindow('system_data', t.content.system_data.title, t.content.system_data.html, 50, 50, 250);
+        // createWindow('terminal', t.content.terminal.title, t.content.terminal.html, 400, 150, 350);
+        // createWindow('visualizers', t.content.visualizers.title, t.content.visualizers.html, 100, 400, 200);
     }, 100);
 
     // Initialize Language

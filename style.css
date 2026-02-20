@@ -6,6 +6,19 @@ html {
     height: 100%;
     overflow: hidden;
     background-color: #000;
+    /* Native SVG Crosshair Cursor: Black with White border for maximum contrast */
+    cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect x='6' y='0' width='4' height='16' fill='white'/%3E%3Crect x='0' y='6' width='16' height='4' fill='white'/%3E%3Crect x='7' y='0' width='2' height='16' fill='black'/%3E%3Crect x='0' y='7' width='16' height='2' fill='black'/%3E%3C/svg%3E") 8 8, crosshair;
+}
+
+/* Interactive elements get the terminal block cursor */
+a,
+.nav-link,
+.control-btn,
+button,
+#audio-toggle,
+#lang-toggle,
+.window-header {
+    cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='18' viewBox='0 0 12 18'%3E%3Crect x='1' y='1' width='10' height='16' fill='black' stroke='white' stroke-width='2'/%3E%3C/svg%3E") 6 9, pointer !important;
 }
 
 canvas {

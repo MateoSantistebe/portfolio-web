@@ -11,7 +11,7 @@ function createWindow(id, title, content, x = 100, y = 100, width = 300) {
     }
 
     const win = document.createElement('div');
-    win.className = 'window';
+    win.className = 'window glitch-in';
     win.setAttribute('data-id', id);
     win.style.left = `${x}px`;
     win.style.top = `${y}px`;
