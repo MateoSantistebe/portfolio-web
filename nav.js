@@ -39,6 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     </audio>
                 </div>
             `;
+        } else if (type === 'gallery') {
+            width = 350;
+            content = `
+                <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
+                    <img src="${src}/1.jpg" style="width: 100%; border: 1px solid #333;" alt="Gallery Image 1">
+                    <img src="${src}/2.jpg" style="width: 100%; border: 1px solid #333;" alt="Gallery Image 2">
+                    <img src="${src}/3.jpg" style="width: 100%; border: 1px solid #333;" alt="Gallery Image 3">
+                </div>
+            `;
         }
 
         // Fixed position for media players (Center-Left focus)
@@ -49,11 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const win = createWindow('project_view_' + Date.now(), title, content, x, y, width);
 
         // Apply specific styles for media windows to ensure they fit content (no scroll)
-        if (win) {
+        if (win && type !== 'gallery') {
             const contentEl = win.querySelector('.window-content');
             if (contentEl) {
                 contentEl.style.maxHeight = 'none';
                 contentEl.style.overflow = 'hidden';
+            }
+        } else if (win && type === 'gallery') {
+            // For gallery, explicitly set a taller max-height if desired, but keep it scrollable
+            const contentEl = win.querySelector('.window-content');
+            if (contentEl) {
+                contentEl.style.maxHeight = '400px';
+                contentEl.style.overflowY = 'auto';
             }
         }
 
@@ -165,21 +181,28 @@ document.addEventListener('DOMContentLoaded', () => {
                             <strong>[001] "Prefrontal Leucotomy"</strong><br>
                             <span style="font-size: 0.9em; opacity: 0.7;">> AI / UNA DIPLOMA INTEGRATOR</span>
                             <p style="margin-top: 5px; font-size: 0.9em;">Exploration of AI in creative processes.</p>
-                            <a href="#" onclick="openProjectWindow('video', 'projects/Proyecto-Integrador-Final-Edit_1.mp4', 'PREFRONTAL_LEUCOTOMY'); return false;">[ OPEN_FILE ]</a>
+                            <a href="#" onclick="openProjectWindow('video', 'projects/leucomotmia-prefrontal/Proyecto-Integrador-Final-Edit_1.mp4', 'PREFRONTAL_LEUCOTOMY'); return false;">[ OPEN_FILE ]</a>
                         </div>
                         <br>
                         <div class="project-item">
                             <strong>[002] "Video Game Sound Montage"</strong><br>
                             <span style="font-size: 0.9em; opacity: 0.7;">> SOUND DESIGN</span>
                             <p style="margin-top: 5px; font-size: 0.9em;">Creation of experimental soundscapes, textures, and rhythms using processed digital material.</p>
-                            <a href="#" onclick="openProjectWindow('audio', 'projects/sonomontaje-videojuego.mp3', 'GAME_SOUND_MONTAGE'); return false;">[ OPEN_FILE ]</a>
+                            <a href="#" onclick="openProjectWindow('audio', 'projects/sonomontaje-videojuego/sonomontaje-videojuego.mp3', 'GAME_SOUND_MONTAGE'); return false;">[ OPEN_FILE ]</a>
                         </div>
                         <br>
                         <div class="project-item">
                             <strong>[003] "Poetic Sound Montage"</strong><br>
                             <span style="font-size: 0.9em; opacity: 0.7;">> SOUND DESIGN</span>
                             <p style="margin-top: 5px; font-size: 0.9em;">Atmospheric composition based on the interaction between word, rhythm, and silence.</p>
-                            <a href="#" onclick="openProjectWindow('audio', 'projects/sonomontaje-poetico.mp3', 'POETIC_SOUND_MONTAGE'); return false;">[ OPEN_FILE ]</a>
+                            <a href="#" onclick="openProjectWindow('audio', 'projects/sonomontaje-poetico/sonomontaje-poetico.mp3', 'POETIC_SOUND_MONTAGE'); return false;">[ OPEN_FILE ]</a>
+                        </div>
+                        <br>
+                        <div class="project-item">
+                            <strong>[004] "Cyborg Girls"</strong><br>
+                            <span style="font-size: 0.9em; opacity: 0.7;">> AI / IMAGE GENERATION</span>
+                            <p style="margin-top: 5px; font-size: 0.9em;">Exploration of cybernetic aesthetics through AI models.</p>
+                            <a href="#" onclick="openProjectWindow('gallery', 'projects/ciborggirls', 'CYBORG_GIRLS'); return false;">[ OPEN_FILE ]</a>
                         </div>
                     `
                 },
@@ -279,21 +302,28 @@ document.addEventListener('DOMContentLoaded', () => {
                             <strong>[001] "Leucotomía Prefrontal"</strong><br>
                             <span style="font-size: 0.9em; opacity: 0.7;">> IA / PROYECTO INTEGRADOR UNA</span>
                             <p style="margin-top: 5px; font-size: 0.9em;">Exploración de IA en procesos creativos.</p>
-                            <a href="#" onclick="openProjectWindow('video', 'projects/Proyecto-Integrador-Final-Edit_1.mp4', 'LEUCOTOMIA_PREFRONTAL'); return false;">[ ABRIR_ARCHIVO ]</a>
+                            <a href="#" onclick="openProjectWindow('video', 'projects/leucomotmia-prefrontal/Proyecto-Integrador-Final-Edit_1.mp4', 'LEUCOTOMIA_PREFRONTAL'); return false;">[ ABRIR_ARCHIVO ]</a>
                         </div>
                         <br>
                         <div class="project-item">
                             <strong>[002] "Sonomontaje videojuego"</strong><br>
                             <span style="font-size: 0.9em; opacity: 0.7;">> DISEÑO SONORO</span>
                             <p style="margin-top: 5px; font-size: 0.9em;">Creación y montaje de paisajes sonoros experimentales. Diseño de texturas, planos y ritmos.</p>
-                            <a href="#" onclick="openProjectWindow('audio', 'projects/sonomontaje-videojuego.mp3', 'SONOMONTAJE_VIDEOJUEGO'); return false;">[ ABRIR_ARCHIVO ]</a>
+                            <a href="#" onclick="openProjectWindow('audio', 'projects/sonomontaje-videojuego/sonomontaje-videojuego.mp3', 'SONOMONTAJE_VIDEOJUEGO'); return false;">[ ABRIR_ARCHIVO ]</a>
                         </div>
                         <br>
                         <div class="project-item">
                             <strong>[003] "Sonomontaje poético"</strong><br>
                             <span style="font-size: 0.9em; opacity: 0.7;">> DISEÑO SONORO</span>
                             <p style="margin-top: 5px; font-size: 0.9em;">Composición sonora basada en la interacción entre palabra, ritmo y silencio.</p>
-                            <a href="#" onclick="openProjectWindow('audio', 'projects/sonomontaje-poetico.mp3', 'SONOMONTAJE_POETICO'); return false;">[ ABRIR_ARCHIVO ]</a>
+                            <a href="#" onclick="openProjectWindow('audio', 'projects/sonomontaje-poetico/sonomontaje-poetico.mp3', 'SONOMONTAJE_POETICO'); return false;">[ ABRIR_ARCHIVO ]</a>
+                        </div>
+                        <br>
+                        <div class="project-item">
+                            <strong>[004] "Cyborg Girls"</strong><br>
+                            <span style="font-size: 0.9em; opacity: 0.7;">> IA / GENERACIÓN DE IMÁGENES</span>
+                            <p style="margin-top: 5px; font-size: 0.9em;">Exploración de estéticas cibernéticas usando modelos de IA.</p>
+                            <a href="#" onclick="openProjectWindow('gallery', 'projects/ciborggirls', 'CHICAS_CYBORG'); return false;">[ ABRIR_ARCHIVO ]</a>
                         </div>
                     `
                 },
