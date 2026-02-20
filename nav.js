@@ -165,21 +165,21 @@ document.addEventListener('DOMContentLoaded', () => {
                             <strong>[001] "Prefrontal Leucotomy"</strong><br>
                             <span style="font-size: 0.9em; opacity: 0.7;">> AI / UNA DIPLOMA INTEGRATOR</span>
                             <p style="margin-top: 5px; font-size: 0.9em;">Exploration of AI in creative processes.</p>
-                            <a href="#" onclick="openProjectWindow('video', 'projects/Proyecto-Integrador-Final-Edit.mp4', 'PREFRONTAL_LEUCOTOMY'); return false;">[ OPEN_FILE ]</a>
+                            <a href="#" onclick="openProjectWindow('video', 'projects/Proyecto-Integrador-Final-Edit_1.mp4', 'PREFRONTAL_LEUCOTOMY'); return false;">[ OPEN_FILE ]</a>
                         </div>
                         <br>
                         <div class="project-item">
                             <strong>[002] "Video Game Sound Montage"</strong><br>
                             <span style="font-size: 0.9em; opacity: 0.7;">> SOUND DESIGN</span>
                             <p style="margin-top: 5px; font-size: 0.9em;">Creation of experimental soundscapes, textures, and rhythms using processed digital material.</p>
-                            <a href="#" onclick="openProjectWindow('audio', 'projects/UNA_LS2_2025_TM_TP01_E04_G05_AFONSO_FRIAS_GIACHERO_SANTISTEBE.wav', 'GAME_SOUND_MONTAGE'); return false;">[ OPEN_FILE ]</a>
+                            <a href="#" onclick="openProjectWindow('audio', 'projects/sonomontaje-videojuego.mp3', 'GAME_SOUND_MONTAGE'); return false;">[ OPEN_FILE ]</a>
                         </div>
                         <br>
                         <div class="project-item">
                             <strong>[003] "Poetic Sound Montage"</strong><br>
                             <span style="font-size: 0.9em; opacity: 0.7;">> SOUND DESIGN</span>
                             <p style="margin-top: 5px; font-size: 0.9em;">Atmospheric composition based on the interaction between word, rhythm, and silence.</p>
-                            <a href="#" onclick="openProjectWindow('audio', 'projects/UNA_LS2_2025_TM_TP02_E03_G05_AFONSO_FRIAS_GIACHERO_SANTISTEBE.wav', 'POETIC_SOUND_MONTAGE'); return false;">[ OPEN_FILE ]</a>
+                            <a href="#" onclick="openProjectWindow('audio', 'projects/sonomontaje-poetico.mp3', 'POETIC_SOUND_MONTAGE'); return false;">[ OPEN_FILE ]</a>
                         </div>
                     `
                 },
@@ -279,21 +279,21 @@ document.addEventListener('DOMContentLoaded', () => {
                             <strong>[001] "Leucotomía Prefrontal"</strong><br>
                             <span style="font-size: 0.9em; opacity: 0.7;">> IA / PROYECTO INTEGRADOR UNA</span>
                             <p style="margin-top: 5px; font-size: 0.9em;">Exploración de IA en procesos creativos.</p>
-                            <a href="#" onclick="openProjectWindow('video', 'projects/Proyecto-Integrador-Final-Edit.mp4', 'LEUCOTOMIA_PREFRONTAL'); return false;">[ ABRIR_ARCHIVO ]</a>
+                            <a href="#" onclick="openProjectWindow('video', 'projects/Proyecto-Integrador-Final-Edit_1.mp4', 'LEUCOTOMIA_PREFRONTAL'); return false;">[ ABRIR_ARCHIVO ]</a>
                         </div>
                         <br>
                         <div class="project-item">
                             <strong>[002] "Sonomontaje videojuego"</strong><br>
                             <span style="font-size: 0.9em; opacity: 0.7;">> DISEÑO SONORO</span>
                             <p style="margin-top: 5px; font-size: 0.9em;">Creación y montaje de paisajes sonoros experimentales. Diseño de texturas, planos y ritmos.</p>
-                            <a href="#" onclick="openProjectWindow('audio', 'projects/UNA_LS2_2025_TM_TP01_E04_G05_AFONSO_FRIAS_GIACHERO_SANTISTEBE.wav', 'SONOMONTAJE_VIDEOJUEGO'); return false;">[ ABRIR_ARCHIVO ]</a>
+                            <a href="#" onclick="openProjectWindow('audio', 'projects/sonomontaje-videojuego.mp3', 'SONOMONTAJE_VIDEOJUEGO'); return false;">[ ABRIR_ARCHIVO ]</a>
                         </div>
                         <br>
                         <div class="project-item">
                             <strong>[003] "Sonomontaje poético"</strong><br>
                             <span style="font-size: 0.9em; opacity: 0.7;">> DISEÑO SONORO</span>
                             <p style="margin-top: 5px; font-size: 0.9em;">Composición sonora basada en la interacción entre palabra, ritmo y silencio.</p>
-                            <a href="#" onclick="openProjectWindow('audio', 'projects/UNA_LS2_2025_TM_TP02_E03_G05_AFONSO_FRIAS_GIACHERO_SANTISTEBE.wav', 'SONOMONTAJE_POETICO'); return false;">[ ABRIR_ARCHIVO ]</a>
+                            <a href="#" onclick="openProjectWindow('audio', 'projects/sonomontaje-poetico.mp3', 'SONOMONTAJE_POETICO'); return false;">[ ABRIR_ARCHIVO ]</a>
                         </div>
                     `
                 },
