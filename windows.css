@@ -24,6 +24,18 @@
     flex-direction: column;
 }
 
+/* Ensure links and interactive elements inside windows can be clicked, especially on mobile */
+.window-content a,
+.window-content button,
+.window-content img,
+.window-content video,
+.window-content audio,
+.window-controls .control-btn {
+    pointer-events: auto;
+    position: relative;
+    z-index: 20;
+}
+
 .window-header {
     background-color: #fff;
     border-bottom: 1px solid #000;
@@ -84,3 +96,18 @@
 .window-content::-webkit-scrollbar-thumb {
     background: #000;
 }
+
+/* --- MOBILE RESPONSIVENESS START --- */
+@media (max-width: 768px) {
+    .window {
+        max-width: 95vw !important;
+        /* Ensure it never exceeds screen width */
+    }
+
+    .window-content {
+        max-height: 50vh;
+        /* Don't let content run off screen */
+    }
+}
+
+/* --- MOBILE RESPONSIVENESS END --- */

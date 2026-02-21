@@ -29,16 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         } else if (type === 'audio') {
             width = 500;
+            // --- MOBILE RESPONSIVENESS START: Dynamic canvas width ---
+            const canvasWidth = Math.min(460, window.innerWidth - 60);
             content = `
                 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; background: #fff;">
-                    <canvas id="canvas_${uniqueId}" width="460" height="100" style="border-bottom: 1px solid #333; margin-bottom: 20px;"></canvas>
-                    <div style="font-family: monospace; margin-bottom: 10px; color: #000; font-size: 0.8em;">[ AUDIO_WAVEFORM_VISUALIZER ]</div>
+                    <canvas id="canvas_${uniqueId}" width="${canvasWidth}" height="100" style="border-bottom: 1px solid #333; margin-bottom: 20px; max-width: 100%;"></canvas>
+                    <div style="font-family: monospace; margin-bottom: 10px; color: #000; font-size: 0.8em; text-align: center;">[ AUDIO_WAVEFORM_VISUALIZER ]</div>
                     <audio id="audio_${uniqueId}" controls style="width: 90%; margin-bottom: 20px;" crossorigin="anonymous">
                         <source src="${src}" type="audio/wav">
                         YOUR BROWSER DOES NOT SUPPORT THE AUDIO TAG.
                     </audio>
                 </div>
             `;
+            // --- MOBILE RESPONSIVENESS END ---
         } else if (type === 'gallery') {
             width = 350;
             content = `
@@ -437,7 +440,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = translations[currentLang].content[section];
 
                 // Use fixed position if available, otherwise default/random
-                const pos = windowPositions[section] || { x: 100, y: 100 };
+                let pos = windowPositions[section] || { x: 100, y: 100 };
+
+                // --- MOBILE RESPONSIVENESS START: Adjust spawn for mobile screens ---
+                if (window.innerWidth < 768) {
+                    pos = { x: 10, y: 80 }; // Spawn centrally on mobile
+                }
+                // --- MOBILE RESPONSIVENESS END ---
 
                 createWindow(section, data.title, data.html, pos.x, pos.y, 400);
             }
@@ -478,6 +487,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // createWindow('terminal', t.content.terminal.title, t.content.terminal.html, 400, 150, 350);
         // createWindow('visualizers', t.content.visualizers.title, t.content.visualizers.html, 100, 400, 200);
     }, 100);
+
+
 
     // Initialize Language
     updateLanguage();

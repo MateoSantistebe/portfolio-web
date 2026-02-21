@@ -84,4 +84,48 @@
     background-color: #000;
     color: #fff;
     border-color: #000;
+    cursor: pointer;
 }
+
+/* --- MOBILE RESPONSIVENESS START --- */
+@media (max-width: 768px) {
+    #top-bar {
+        height: auto;
+        flex-direction: column;
+        padding: 10px 5px;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        /* Allow it to flow naturally if needed, or keep fixed but taller */
+    }
+
+    .logo {
+        margin-right: 0;
+        font-size: 16px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .status-info {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* Push UI layer down so top bar doesn't overlap windows */
+    #ui-layer {
+        top: 100px;
+    }
+}
+
+/* --- MOBILE RESPONSIVENESS END --- */
