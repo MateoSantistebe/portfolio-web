@@ -20,7 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let width = 400; // Default width
 
         if (type === 'video') {
-            width = 400; // Adjusted width based on user feedback (smaller but full aspect)
+            // --- MOBILE RESPONSIVENESS START: Dynamic video width ---
+            width = Math.min(400, window.innerWidth - 80); // Even smaller width for mobile
+            // --- MOBILE RESPONSIVENESS END ---
             content = `
                 <video controls style="width: 100%; height: auto; border: 1px solid #333; display: block;">
                     <source src="${src}" type="video/mp4">
