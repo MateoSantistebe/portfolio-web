@@ -115,6 +115,16 @@ function createWindow(id, title, content, x = 100, y = 100, width = 300) {
     win.appendChild(header);
     win.appendChild(contentEl);
 
+    // Resize Handle (Only for specific core windows)
+    const resizableWindows = ['about', 'projects', 'contact'];
+    // We check `id` directly, which corresponds to the initial passed string like 'about'
+    if (resizableWindows.includes(id)) {
+        const resizeHandle = document.createElement('div');
+        resizeHandle.className = 'window-resize-handle';
+        win.appendChild(resizeHandle);
+        makeResizable(win, resizeHandle);
+    }
+
     uiLayer.appendChild(win);
 
     makeDraggable(win, header);
@@ -235,4 +245,58 @@ function bringToFront(element) {
     if (maxZ >= 999) maxZ = 998;
 
     element.style.zIndex = maxZ + 1;
+}
+
+function makeResizable(element, handle) {
+    let startX, startY, startWidth, startHeight;
+    let minWidth, minHeight;
+
+    handle.onmousedown = function (e) {
+        // Prevent action on mobile (CSS also hides the handle)
+        if (window.innerWidth < 768) return;
+
+        e = e || window.event;
+        e.preventDefault();
+        startX = e.clientX;
+        startY = e.clientY;
+        startWidth = parseInt(document.defaultView.getComputedStyle(element).width, 10);
+        startHeight = parseInt(document.defaultView.getComputedStyle(element).height, 10);
+
+        // Capture initial dimensions on first resize to serve as hard minimums
+        if (!element.dataset.minWidth) {
+            element.dataset.minWidth = startWidth;
+            element.dataset.minHeight = startHeight;
+        }
+        minWidth = parseInt(element.dataset.minWidth, 10);
+        minHeight = parseInt(element.dataset.minHeight, 10);
+
+        document.documentElement.addEventListener('mousemove', doDrag);
+        document.documentElement.addEventListener('mouseup', stopDrag);
+
+        bringToFront(element);
+    };
+
+    function doDrag(e) {
+        let newWidth = startWidth + e.clientX - startX;
+        let newHeight = startHeight + e.clientY - startY;
+
+        // Minimum dimensions constraint (Original size)
+        if (newWidth >= minWidth) {
+            element.style.width = newWidth + 'px';
+        }
+        if (newHeight >= minHeight) {
+            element.style.height = newHeight + 'px';
+
+            // Remove max-height constraint when resizing
+            const contentEl = element.querySelector('.window-content');
+            if (contentEl) {
+                contentEl.style.maxHeight = 'none';
+            }
+        }
+    }
+
+    function stopDrag(e) {
+        document.documentElement.removeEventListener('mousemove', doDrag);
+        document.documentElement.removeEventListener('mouseup', stopDrag);
+    }
 }

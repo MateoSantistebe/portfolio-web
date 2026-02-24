@@ -97,6 +97,29 @@
     background: #000;
 }
 
+/* Resize Handle */
+.window-resize-handle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    cursor: se-resize;
+    z-index: 30;
+    background: transparent;
+}
+
+.window-resize-handle::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
 /* --- MOBILE RESPONSIVENESS START --- */
 @media (max-width: 768px) {
     .window {
@@ -107,6 +130,10 @@
     .window-content {
         max-height: 50vh;
         /* Don't let content run off screen */
+    }
+
+    .window-resize-handle {
+        display: none !important;
     }
 }
 
