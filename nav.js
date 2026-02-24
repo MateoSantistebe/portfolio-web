@@ -209,6 +209,17 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p style="margin-top: 5px; font-size: 0.9em;">Exploration of cybernetic aesthetics through AI models.</p>
                             <a href="#" onclick="openProjectWindow('gallery', 'projects/ciborggirls', 'CYBORG_GIRLS'); return false;">[ OPEN_FILE ]</a>
                         </div>
+                        <br>
+                        <div class="project-item">
+                            <strong>[005] "Wan ATI"</strong><br>
+                            <span style="font-size: 0.9em; opacity: 0.7;">> AI / IMG2VID</span>
+                            <p style="margin-top: 5px; font-size: 0.9em;">Generated in ComfyUI using Wan2.1 ATI.</p>
+                            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 5px;">
+                                <a href="#" onclick="openProjectWindow('video', 'projects/wanati/WanAti_00001.mp4', 'WAN_ATI_VIDEO_1'); return false;">[ VIDEO_1 ]</a>
+                                <a href="#" onclick="openProjectWindow('video', 'projects/wanati/WanAti_00002.mp4', 'WAN_ATI_VIDEO_2'); return false;">[ VIDEO_2 ]</a>
+                                <a href="#" onclick="openProjectWindow('video', 'projects/wanati/WanAti_00008_1.mp4', 'WAN_ATI_VIDEO_3'); return false;">[ VIDEO_3 ]</a>
+                            </div>
+                        </div>
                     `
                 },
                 'contact': {
@@ -329,6 +340,17 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span style="font-size: 0.9em; opacity: 0.7;">> IA / GENERACIÓN DE IMÁGENES</span>
                             <p style="margin-top: 5px; font-size: 0.9em;">Exploración de estéticas cibernéticas usando modelos de IA.</p>
                             <a href="#" onclick="openProjectWindow('gallery', 'projects/ciborggirls', 'CHICAS_CYBORG'); return false;">[ ABRIR_ARCHIVO ]</a>
+                        </div>
+                        <br>
+                        <div class="project-item">
+                            <strong>[005] "Wan ATI"</strong><br>
+                            <span style="font-size: 0.9em; opacity: 0.7;">> IA / IMG2VID</span>
+                            <p style="margin-top: 5px; font-size: 0.9em;">Generado en ComfyUI usando Wan2.1 ATI.</p>
+                            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 5px;">
+                                <a href="#" onclick="openProjectWindow('video', 'projects/wanati/WanAti_00001.mp4', 'WAN_ATI_VIDEO_1'); return false;">[ VIDEO_1 ]</a>
+                                <a href="#" onclick="openProjectWindow('video', 'projects/wanati/WanAti_00002.mp4', 'WAN_ATI_VIDEO_2'); return false;">[ VIDEO_2 ]</a>
+                                <a href="#" onclick="openProjectWindow('video', 'projects/wanati/WanAti_00008_1.mp4', 'WAN_ATI_VIDEO_3'); return false;">[ VIDEO_3 ]</a>
+                            </div>
                         </div>
                     `
                 },
